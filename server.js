@@ -19,3 +19,13 @@ mysql.connect((err)=>{
     console.log('DB not connect \n Error : ' + JSON.stringify(err, undefined, 2));
 })
 
+// je fais une requête get pour récupérer ce qu'il y a dans ma table
+
+app.get('/', (req, res) => {
+    mysql.query('SELECT * FROM rubentable', (err, rows) => {
+        if(!err)
+        res.send(rows);
+        else
+        console.log(err);
+    })
+})
