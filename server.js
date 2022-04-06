@@ -29,3 +29,15 @@ app.get('/', (req, res) => {
         console.log(err);
     })
 })
+
+// je veux faire une recherche sur un user en particulier
+
+app.get('/user/:id', (req, res) => {
+    mysql.query('SELECT * FROM rubentable WHERE id = ?', [req.params.id], (err, rows) => {
+        if(!err)
+        res.send(rows);
+        else
+        console.log(err);
+    })
+})
+
