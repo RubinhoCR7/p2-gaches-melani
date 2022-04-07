@@ -41,3 +41,13 @@ app.get('/user/:id', (req, res) => {
     })
 })
 
+// veux supprimer un user en particulier
+
+app.delete('/user/:id', (req, res) => {
+    mysql.query('DELETE FROM rubentable WHERE id = ?', [req.params.id], (err, rows) => {
+        if(!err)
+        res.send('delete reussi');
+        else
+        console.log(err);
+    })
+})
