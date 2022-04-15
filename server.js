@@ -51,3 +51,15 @@ app.delete('/user/:id', (req, res) => {
         console.log(err);
     })
 })
+
+// je veux add un user
+
+app.post('/user', (req, res) => {
+    let ajout = ['Lukas','lukas.rms@gmail.com']
+    mysql.query('INSERT INTO rubentable (name, email) VALUES (?, ?)', ajout, (err, rows) => {
+        if(!err)
+        res.send('post reussi');
+        else
+        res.send(err);
+    })
+})
