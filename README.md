@@ -1,6 +1,6 @@
 todolist
 - get x 2 (check x2)
-- post
+- post x 1
 - put
 - delete X 1 
 
