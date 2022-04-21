@@ -63,3 +63,15 @@ app.post('/user', (req, res) => {
         res.send(err);
     })
 })
+
+// je veux remplacer le nom d'un de mes utilisateurs 
+
+app.put('/user/:id', (req, res) => {
+    mysql.query('UPDATE rubentable SET name = "Thierry" WHERE id = ?', [req.params.id], (err, rows) => {
+        if(!err)
+        res.send(rows);
+        else
+        res.send(err);
+    })
+})
+
